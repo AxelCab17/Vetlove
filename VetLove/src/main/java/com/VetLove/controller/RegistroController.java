@@ -1,4 +1,3 @@
-
 package com.VetLove.controller;
 
 import com.VetLove.domain.Registro;
@@ -11,29 +10,38 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @Slf4j
-@RequestMapping("/registro")
 public class RegistroController {
 
-    @Autowired
-    RegistroService registroService;
+    @RequestMapping("/registro")
+    public String registro() {
 
-    @GetMapping("/form")
-    public String inicio(Model model) {
-        log.info("Consumiendo el recurso categoria/listado");
-        List<Registro> registros = registroService.getRegistros(false);
-        model.addAttribute("categorias", registros);
-        return "/registro/form";
-
+        return "registro";
     }
 
+
+
+    
+   @Autowired
+    RegistroService registroService;
+
+   /* @GetMapping("registro/registro")
+    public String inicio(Model model) {
+        log.info("Consumiendo el recurso registro/listado");
+        List<Registro> registros = registroService.getRegistros(false);
+        model.addAttribute("registros", registros);
+        return "registro/registro";
+
+    }
+*/
     @PostMapping("/guardar")
     public String registroGuardar(Registro registro) {
         registroService.save(registro);
-        return "redirect:/registro/form";
+         System.out.println("nombre" + registro);
+      
+        return "registro";
     }
-
-    
 }
