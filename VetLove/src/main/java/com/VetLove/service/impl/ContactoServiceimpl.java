@@ -4,46 +4,35 @@
  */
 package com.VetLove.service.impl;
 
-import com.VetLove.dao.RegistroDao;
-import com.VetLove.domain.Registro;
-import com.VetLove.service.RegistroService;
+import com.VetLove.dao.ContactoDao;
+import com.VetLove.domain.Contacto;
+import com.VetLove.service.ContactoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- *
- * @author Usuario
- */
 @Service
-public class ContactoServiceimpl implements RegistroService {
+public class ContactoServiceimpl implements ContactoService {
 
     @Autowired
-    private RegistroDao registroDao;
+    private ContactoDao contactoDao;
 
     @Override
     @Transactional(readOnly = true)
-    public List<Registro> getRegistros(boolean activos) {
-        List<Registro> lista = registroDao.findAll();
-
-        if (activos) {
-            //Para remover las categorias donde activo sea igual a falso
-            lista.removeIf(x -> !x.isActivo());
-        }
-        return lista;
+    public List<Contacto> getContactos() {
+        return contactoDao.findAll();
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Registro getRegistro(Registro registro) {
-        return registroDao.findById(registro.getIdUsuario()).orElse(null);
+    public Contacto getContacto(Long email) {
+        return contactoDao.findById(email).orElse(null);
     }
 
     @Override
-    @Transactional
-    public void save(Registro registro) {
-        registroDao.save(registro);
+    public void save(Contacto contacto) {
+        contactoDao.save(contacto);
     }
 
 }
