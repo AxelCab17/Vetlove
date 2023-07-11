@@ -49,35 +49,33 @@
 
         <header th:replace="layout/plantilla :: header"></header><br><br><br>
                     <div class="text-center">
-                        <img src="../static/images/images (1).jpg" class="rounded" alt="..."height="100px" width="100px" align="center" >
+                        <img th:src="@{/images/images (1).jpg}" class="rounded" alt="..." height="100px" width="100px" align="center">
                     </div>
 
                     <form action="/guardar" method="POST">
                         <div class="container">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="inputnombre">[[#{registro.nombre}]]</label>
-                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputapellido">[[#{registro.apellido}]]</label>
-                                    <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+                                    <label for="nombre">[[#{registro.nombre}]]</label>
+                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre">
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputEmail">[[#{registro.email}]]</label>
-                                <input type="email" class="form-control" id="email" placeholder="Email">
+                                <label for="email">[[#{registro.email}]]</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email" name="email">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputPassword">[[#{registro.contrasena}]]</label>
-                                <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                                <label for="password">[[#{registro.contrasena}]]</label>
+                                <input type="password" class="form-control" id="password" placeholder="Contraseña" name="contrasena">
                             </div>
-
                             <div class="form-group col-md-6">
-                                <label for="inputPassword2">[[#{registro.contrasena}]]</label>
-                                <input type="password" class="form-control" id="password2" placeholder=" Repetir Contraseña">
+                                <label for="password2">[[#{registro.contrasena}]]</label>
+                                <input type="password" class="form-control" id="password2" placeholder="Repetir Contraseña" name="repetirContrasena">
                             </div>
-
+                            <div class="mb-3">
+                                <label for="activo">[[#{registro.activo}]]</label>
+                                <input class="form-check-input" type="checkbox" name="activo" id="activo"/>
+                            </div>
                             <div class="form-group">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="gridCheck">
@@ -85,9 +83,8 @@
                                             Acepto los terminos y condiciones
                                         </label>
                                 </div>
+                                <button type="submit" class="btn btn-primary">Registrarme</button>
                             </div>
-                            <button type="submit" class="btn btn-primary">Registrarme</button></div>
-
                     </form>
                     <footer th:replace="layout/plantilla :: footer"></footer>
                     </body>

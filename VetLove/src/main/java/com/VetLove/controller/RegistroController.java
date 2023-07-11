@@ -22,13 +22,10 @@ public class RegistroController {
         return "registro";
     }
 
-
-
-    
-   @Autowired
+    @Autowired
     RegistroService registroService;
 
-   /* @GetMapping("registro/registro")
+    @GetMapping("registro/registro")
     public String inicio(Model model) {
         log.info("Consumiendo el recurso registro/listado");
         List<Registro> registros = registroService.getRegistros(false);
@@ -36,12 +33,12 @@ public class RegistroController {
         return "registro/registro";
 
     }
-*/
+
     @PostMapping("/guardar")
     public String registroGuardar(Registro registro) {
         registroService.save(registro);
-         System.out.println("nombre" + registro);
-      
+        System.out.println("nombre" + registro);
+
         return "registro";
     }
 }
