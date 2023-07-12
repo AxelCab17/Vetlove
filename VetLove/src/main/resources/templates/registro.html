@@ -1,43 +1,4 @@
-<!DOCTYPE html>
-<!--<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
-<head th:replace="~{layout/plantilla :: head}">
-    <title>VetLove</title>
-</head>
-<body>
-<!-- Formulario de Registro -->
-<!-- Fragmento del formulario de registro -->
-<!--<section th:fragment="formularioRegistro">
-   <form th:action="@{/guardar}" method="POST">
-       <div class="container">
-           <div class="row">
-               <div class="col-md-6 offset-md-3">
-                   <h2>Registrarse</h2>
-                   <div class="form-group">
-                       <label for="nombre">Nombre</label>
-                       <input type="text" class="form-control" id="nombre" name="nombre" required="true" />
-                   </div>
-                   <div class="form-group">
-                       <label for="email">Email</label>
-                       <input type="email" class="form-control" id="email" name="email" required="true" />
-                   </div>
-                   <div class="form-group">
-                       <label for="contrasena">Contraseña</label>
-                       <input type="password" class="form-control" id="contrasena" name="contrasena" required="true" />
-                   </div>
-                   <div class="form-group">
-                       <label for="repetirContrasena">Repetir Contraseña</label>
-                       <input type="password" class="form-control" id="repetirContrasena" name="repetirContrasena" required="true" />
-                   </div>
-                   <button type="submit" class="btn btn-primary">Registrarse</button>
-               </div>
-           </div>
-       </div>
-   </form>
-</section>
-</body>
-</html>-->
+
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
@@ -45,14 +6,13 @@
     <head th:replace="layout/plantilla::head">
     </head>
 
-    <body style="background-color: #B2CFDE">
+    <body >
 
         <header th:replace="layout/plantilla :: header"></header><br><br><br>
-                    <div class="text-center">
-                       <img src="https://www.portalveterinaria.com/upload/20230224091922veterinario-cuidando-perro-mascota_pv2.jpg" alt="Veterinaria" style="width: 600px; height: auto;">
-                    </div>
-
-                    <form action="/guardar" method="POST">
+  <div class="container-fluid text-center " style="background-color: #34C2BB; height: 60px" > 
+            <h3 style="font-family: serif">¡Registrate con Nosotros!</h3>
+        </div>
+                    <form action="/guardar" method="POST" style="margin: 10px">
                         <div class="container">
                             <div class="form-row">
                                 <div class="form-group">
@@ -64,6 +24,7 @@
                                 <label for="email">[[#{registro.email}]]</label>
                                 <input type="email" class="form-control" id="email" placeholder="Email" name="email">
                             </div>
+                            <img th:src="@{/images/registro.jpg}" alt=".." align="right" height="200px" weidth="200px"/>
                             <div class="form-group col-md-6">
                                 <label for="password">[[#{registro.contrasena}]]</label>
                                 <input type="password" class="form-control" id="password" placeholder="Contraseña" name="contrasena">
@@ -85,6 +46,7 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary">Registrarme</button>
                             </div>
+
                     </form>
                     <footer th:replace="layout/plantilla :: footer"></footer>
                     </body>
