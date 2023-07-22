@@ -10,8 +10,8 @@
 
     <body >
         <header th:replace="layout/plantilla :: header"></header>
-        <div class="container-fluid text-center " style="background-color: #34C2BB; height: 60px" > 
-            <h3 style="font-family: serif">   <legend class="text-center header">[[#{contacto.nombre}]]</legend></h3>
+        <div class="container-fluid text-center " style="height: 60px" > <br>
+                <h2 style="font-family: serif" >  <legend class="text-center header">[[#{contacto.nombre}]]</legend></h2><br>
         </div>
         <div style="margin-top: 20px; font-family:  sans-serif">
             <div class="container">
@@ -70,5 +70,6 @@
                     </div>
                 </div>
             </div></div>
+          <footer th:replace="layout/plantilla :: footer"></footer>
     </body>
 </html>

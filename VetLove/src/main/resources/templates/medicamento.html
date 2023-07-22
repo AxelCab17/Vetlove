@@ -6,21 +6,87 @@
     <head th:replace="layout/plantilla::head">
     </head>
 
-    <body style="background-color: #B2CFDE">
+    <body>
         <header th:replace="layout/plantilla :: header"></header>
-        <div style="margin-top: 20px"/>
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p style="font-style: var" class="card-text">
-                        Agrogenta® 11.</p>
-                </div>
+        <div class="card-group">
+            <div class="card">
+                <img th:src="@{/images/agrogenta.png}"  class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Agrogenta® 11</h5>
+                        <p class="card-text">Para el tratamiento de infecciones causadas por microorganismos sensibles a la gentamicina (del aparato genito-urinario, respiratorio, gastrointestinal). Útil además en casos de mastitis, metritis bacteriana, infecciones cutáneas y posoperatorias, septicemias, entre otras. </p>
+                        <p class="card-text"><small class="text-muted">Ultima actualización hace 2 horas</small></p>
+                    </div>
+            </div>
+            <div class="card">
+                <img th:src="@{/images/amoxi.png}"  class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Amoxi-Tabs C®-250</h5>
+                        <p class="card-text">Para el tratamiento de infecciones periodontales causadas por cepas susceptibles (bacterias aerobias y anaerobias). Apropiado en infecciones de la piel y tejido blando causadas por especies susceptibles de Staphylococcus spp. E. coli, Pasteurella spp. y Streptococcus spp. Adecuado en infecciones del tracto respiratorio 
+                            y urinario, incluyendo aquellas causadas por especies susceptibles de E. coli.</p>
+                        <p class="card-text"><small class="text-muted">Ultima actualización hace 2 horas</small></p>
+                    </div>
+            </div>
+            <div class="card">
+                <img th:src="@{/images/coliflox.png}"  class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Coliflox® OS</h5>
+                        <p class="card-text">Tratamiento de enfermedades intestinales, respiratorias, del tracto urinario y sistémicas causadas por gérmenes sensibles a la enrofloxacina y colistina sulfato: enfermedad respiratoria crónica, aerosaculitis, sinovitis, colibacilosis, pasteurelosis, salmonelosis, campilobacteriosis, micoplasmosis, cólera, bordetelosis, coriza, erisipelosis, estafilococosis, clamidiasis, 
+                            enteritis necrótica, enfermedad de Glässer, infecciones secundarias asociadas a infecciones virales, entre otras.</p>
+                        <p class="card-text"><small class="text-muted">Ultima actualización hace 2 horas</small></p>
+                    </div>
+            </div>
+            <div class="card">
+                <img th:src="@{/images/enro.png}"  class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Enro-Tabs® 150 FT</h5>
+                        <p class="card-text"> está indicado para su uso en el tratamiento de infecciones bacterianas -asociadas con bacterias susceptibles a la enrofloxacina- en:  
+                            Tracto digestivo: causadas por E. coli, Salmonella, Proteus spp. Tracto Respiratorio. Heridas infectadas y septicemias.</p>
+                        <p class="card-text"><small class="text-muted">Ultima actualización hace 2 horas</small></p>
+                    </div>
+            </div>
+
         </div>
-        <!-- <div class="card" style="width: 18rem;">
-             <img src="..." class="card-img-top" alt="...">
-                 <div class="card-body">
-                     <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
-                 </div>
-         </div>-->
-    </body>
-</html>
+        <div class="card-group">
+            <div class="card">
+                <img th:src="@{/images/neo.png}"  class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Neo-Terraciclina® WS</h5>
+                        <p class="card-text">Tratamiento y prevención de infecciones causadas por gérmenes Gram-positivos o Gram-negativos sensibles a la oxitetraciclina y/o neomicina, principalmente infecciones respiratorias y gastrointestinales, prevención de infecciones bacterianas secundarias y 
+                            prevención de la mortalidad temprana. Diarreas, enteritis inespecíficas, enterotoxemias, salmonelosis, colibacilosis, disentería, cólera, coriza, neumonías inespecíficas, rinitis atrófica, enfermedad respiratoria crónica, 
+                            aerosaculitis, sinovitis, onfalitis, conjuntivitis, MMA, hexamitiasis, infecciones secundarias a cuadros virales entre otras. </p>
+                        <p class="card-text"><small class="text-muted">Ultima actualización hace 2 horas</small></p>
+                    </div>
+            </div>
+            <div class="card">
+                <img th:src="@{/images/liqua.png}"  class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Liquamox® C</h5>
+                        <p class="card-text">Para el tratamiento de infecciones causadas por cepas susceptibles (bacterias aerobias y anaerobias): infecciones periodontales, de la piel y tejido blando causadas por especies susceptibles de Staphylococcus spp. E. coli, Pasteurella spp. y Streptococcus spp. 
+                            Adecuado en infecciones del tracto respiratorio y urinario, incluyendo aquellas causadas por especies susceptibles de E. coli. Tratamiento de osteomielitis y otras complicaciones bacterianas sensibles a la amoxicilina.</p>
+                        <p class="card-text"><small class="text-muted">Ultima actualización hace 2 horas</small></p>
+                    </div>
+            </div>
+            <div class="card">
+                <img th:src="@{/images/metri.png}"  class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Metri-Cef 3®Coliflox® OS</h5>
+                        <p class="card-text">Para el tratamiento y la prevención de la metritis (clínica y subclínica) y piometra en bovinos, causadas por gérmenes sensibles a alguno de los antibióticos de la fórmula. Triple acción antibiótica, inmediata y prolongada, adicionado con vitamina A como regenerador epitelial de la pared uterina.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+            </div>
+            <div class="card">
+                <img th:src="@{/images/tygran.png}"  class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Tygran® G100 Px</h5>
+                        <p class="card-text">Tygran® G100 Px es un producto antibiótico para la medicación del alimento de aves y cerdos. Provee 100 mg/g de tilosina y es muy eficaz frente a diferentes enfermedades importantes en cerdos y aves de corral. Actúa contra microorganismos Gram+ y algunos Gram – y ofrece una buena actividad antimicoplásmica. <br><br>
+                                    Aves: Enfermedad respiratoria crónica (ERC), micoplasmosis, aerosaculitis, sinusitis infecciosa.<br><br>
+                                            Porcinos: Neumonía micoplásmica, disentería porcina, enteropatía proliferativa (PPE) o ileitis. </p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                            </div>
+                                            </div>
+
+                                            </div>
+                                            <footer th:replace="layout/plantilla :: footer"></footer> 
+                                            </body>
+
+                                            </html>
