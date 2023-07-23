@@ -13,10 +13,6 @@
                         <div class="container">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="cedula">Cédula</label>
-                                    <input type="text" class="form-control" id="cedula" placeholder="Cédula del dueño" name="cedula">
-                                </div>
-                                <div class="form-group">
                                     <label for="nombre">Nombre</label>
                                     <input type="text" class="form-control" id="nombre" placeholder="Nombre del dueño" name="nombre">
                                 </div>
@@ -24,32 +20,35 @@
                                     <label for="apellido">Apellido</label>
                                     <input type="text" class="form-control" id="apellido" placeholder="Apellido del dueño" name="apellido">
                                 </div>
+                                <div class="form-group">
+                                    <label for="cedula">Cedula</label>
+                                    <input type="text" class="form-control" id="cedula" placeholder="Cedula del dueño" name="cedula">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="especialidad">Especialidad del veterinario</label>
+                                <select class="form-control" id="especialidad" name="especialidad">
+                                    <option value="Especialidad 1">Especialidad 1</option>
+                                    <option value="Especialidad 2">Especialidad 2</option>
+                                    <option value="Especialidad 3">Especialidad 3</option>
+                                    <!-- Agrega más opciones aquí si es necesario -->
+                                </select>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="fechaDisponible">Fecha disponible</label>
+                                    <input type="date" class="form-control" id="fechaDisponible" name="fechaDisponible">
+                                </div>
+                                
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label for="nombreMascota">Nombre de la mascota</label>
                                     <input type="text" class="form-control" id="nombreMascota" placeholder="Nombre de la mascota"
-                                           name="nombre_mascota">
+                                           name="nombreMascota">
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <label for="especialidad">Especialidad del veterinario</label>
-                                    <select class="form-control" id="especialidad" name="especialidad">
-                                        <option value="Especialidad 1">Especialidad 1</option>
-                                        <option value="Especialidad 2">Especialidad 2</option>
-                                        <option value="Especialidad 3">Especialidad 3</option>
-                                        <!-- Agrega más opciones aquí si es necesario -->
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="fechaDisponible">Fecha disponible</label>
-                                    <input type="date" class="form-control" id="fechaDisponible" name="fecha_disponible">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="horaDisponible">Hora disponible</label>
-                                    <input type="time" class="form-control" id="horaDisponible" name="hora_disponible">
-                                </div>
+
                             </div>
                             <img th:src="@{/images/registro.jpg}" alt=".." align="right" height="200px" width="200px" />
                             <div class="mb-3">

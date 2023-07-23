@@ -36,7 +36,7 @@ public class CitasServiceimpl implements CitasService {
 
     @Override
     public Citas getCita(Citas citas) {
-        return citasDao.findById(citas.getCedula()).orElse(null);
+        return citasDao.findById(citas.getIdCitas()).orElse(null);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class CitasServiceimpl implements CitasService {
     public void delete(Citas citas) {
         citasDao.delete(citas);
     }
-    
+
     @Override
     @Transactional
     public void save(Citas citas) {
