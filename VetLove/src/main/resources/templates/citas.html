@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head th:replace="layout/plantilla::head">
+    </head>
+
+    <body>
+        <header th:replace="layout/plantilla :: header"></header><br><br><br>
+                    <div class="container-fluid text-center " style="height: 60px">
+                        <h3 style="font-family: serif">¡Agenda una cita para tu mascota!</h3>
+                    </div>
+                    <form action="/guardarCita" method="POST" style="margin: 10px">
+                        <div class="container">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cedula">Cédula</label>
+                                    <input type="text" class="form-control" id="cedula" placeholder="Cédula del dueño" name="cedula">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre del dueño" name="nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="apellido">Apellido</label>
+                                    <input type="text" class="form-control" id="apellido" placeholder="Apellido del dueño" name="apellido">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="nombreMascota">Nombre de la mascota</label>
+                                    <input type="text" class="form-control" id="nombreMascota" placeholder="Nombre de la mascota"
+                                           name="nombre_mascota">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="especialidad">Especialidad del veterinario</label>
+                                    <select class="form-control" id="especialidad" name="especialidad">
+                                        <option value="Especialidad 1">Especialidad 1</option>
+                                        <option value="Especialidad 2">Especialidad 2</option>
+                                        <option value="Especialidad 3">Especialidad 3</option>
+                                        <!-- Agrega más opciones aquí si es necesario -->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="fechaDisponible">Fecha disponible</label>
+                                    <input type="date" class="form-control" id="fechaDisponible" name="fecha_disponible">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="horaDisponible">Hora disponible</label>
+                                    <input type="time" class="form-control" id="horaDisponible" name="hora_disponible">
+                                </div>
+                            </div>
+                            <img th:src="@{/images/registro.jpg}" alt=".." align="right" height="200px" width="200px" />
+                            <div class="mb-3">
+                                <label for="activo">Confirmacion de cita</label>
+                                <input class="form-check-input" type="checkbox" name="activo" id="activo" />
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Agendar cita</button>
+                            </div>
+
+                    </form>
+                    <footer th:replace="layout/plantilla :: footer"></footer>
+                    </body>
+
+                    </html>

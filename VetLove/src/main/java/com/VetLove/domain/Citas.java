@@ -1,11 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.VetLove.domain;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.sql.Time;
+import java.util.Date;
 import lombok.Data;
 
 @Data
@@ -23,20 +22,23 @@ public class Citas implements Serializable {
     private String nombre;
     private String apellido;
     private String especialidad;
-    private String fechaDisponible;
+    private Date fechaDisponible;
+    private Time horaDisponible;
     private String nombreMascota;
     private boolean activo;
 
     public Citas() {
     }
 
-    public Citas(String nombre, String apellido, String especialidad, String fechaDisponible,String nombreMascota,boolean activo) {
+    public Citas(Long cedula, String nombre, String apellido, String especialidad, Date fechaDisponible, Time horaDisponible, String nombreMascota, boolean activo) {
+        this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.especialidad = especialidad;
         this.fechaDisponible = fechaDisponible;
+        this.horaDisponible = horaDisponible;
         this.nombreMascota = nombreMascota;
-        this.activo= activo;
+        this.activo = activo;
     }
 
 }

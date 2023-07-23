@@ -1,75 +1,81 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/plantilla::head">
+</head>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml"
-
-      xmlns:th="http://www.thymeleaf.org">
-
-    <head th:replace="layout/plantilla::head">
-    </head>
-
-    <body >
-        <header th:replace="layout/plantilla :: header"></header>
-        <div class="container-fluid text-center " style="height: 60px" > <br>
-                <h2 style="font-family: serif" >  <legend class="text-center header">[[#{contacto.nombre}]]</legend></h2><br>
-        </div>
-        <div style="margin-top: 20px; font-family:  sans-serif">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="well well-sm">
-                            <form class="form-horizontal" method="post">
-                                <fieldset>
-
-
-                                    <div class="form-group">
-                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                                        <div class="col-md-8">
-                                            <input id="fname" name="nombre" type="text" placeholder="Nombre" class="form-control">
-                                        </div>
+<body>
+    <header th:replace="layout/plantilla :: header"></header>
+    <div class="container-fluid text-center" style="height: 60px">
+        <br>
+        <h2 style="font-family: serif">
+            <legend class="text-center header">Gracias por usar la página web de Vetelove. Nos alegra que podamos cumplir con las necesidades de tus mascotas.</legend>
+        </h2>
+        <br>
+    </div>
+   
+    </div>
+    <div style="margin-top: 20px; font-family: sans-serif">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well well-sm">
+                        <form class="form-horizontal" method="post">
+                            <fieldset>
+                                <div class="form-group">
+                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                    <div class="col-md-8">
+                                        <input id="fname" name="nombre" type="text" placeholder="Nombre" class="form-control">
                                     </div>
-                                    <div class="form-group">
-                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                                        <div class="col-md-8">
-                                            <input id="lname" name="apellido" type="text" placeholder="Apellido" class="form-control">
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                    <div class="col-md-8">
+                                        <input id="lname" name="apellido" type="text" placeholder="Apellido" class="form-control">
                                     </div>
-                                    <img th:src="@{/images/cerdito.jpg}" alt=".." align="right" height="200px" weidth="200px"/>
-                                    <div class="form-group">
-
-
-                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-                                        <div class="col-md-8">
-                                            <input id="email" name="email" type="text" placeholder="Email " class="form-control">
-                                        </div>
-
+                                </div>
+                                <img th:src="@{/images/cerdito.jpg}" alt=".." align="right" height="200px" width="200px"/>
+                                <div class="form-group">
+                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                                    <div class="col-md-8">
+                                        <input id="email" name="email" type="text" placeholder="Email" class="form-control">
                                     </div>
-
-                                    <div class="form-group">
-                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
-                                        <div class="col-md-8">
-                                            <input id="phone" name="telefono" type="text" placeholder="Telefono " class="form-control">
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                                    <div class="col-md-8">
+                                        <input id="phone" name="telefono" type="text" placeholder="Teléfono" class="form-control">
                                     </div>
-
-                                    <div class="form-group">
-                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-                                        <div class="col-md-8">
-                                            <textarea class="form-control" id="message" name="mensaje" placeholder="Introduzca su mensaje para nosotros aquí. Nos pondremos en contacto con usted lo más pronto posible." rows="7"></textarea>
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                                    <div class="col-md-8">
+                                        <textarea class="form-control" id="message" name="mensaje" placeholder="Introduzca su mensaje para nosotros aquí. Nos pondremos en contacto con usted lo más pronto posible." rows="7"></textarea>
                                     </div>
-
-                                    <div class="form-group">
-                                        <div class="col-md-12 text-center"><br>
-                                                <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 text-center"><br>
+                                        <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
                                     </div>
-                                </fieldset>
-                            </form>
-                        </div>
+                                </div>
+                            </fieldset>
+                        </form>
                     </div>
                 </div>
-            </div></div>
-          <footer th:replace="layout/plantilla :: footer"></footer>
-    </body>
+            </div>
+        </div>
+    </div>
+    <div class="container text-left" style="margin-top: 20px;">
+        <p1><img src="https://static.vecteezy.com/system/resources/previews/017/177/709/non_2x/phone-icon-symbol-on-transparent-background-free-png.png" alt="Teléfono" width="60px" height="60px" style="margin-right: 10px;"> 2234-3211 / 2244-2654</p1>
+        <p2><img src="https://img.freepik.com/premium-vector/vinnitsyaukrainejanuary-24-2021facebook-vector-image-flat-icon-with-letter-f-blue-color-button-with-letter-isolated-white-background_736051-65.jpg" alt="Facebook" width="80px" height="80px" style="margin-right: 10px;"> Veterinaria VeteLove</p2>
+        <p3><img src="https://img.freepik.com/vector-premium/logotipo-redes-sociales-degradado-purpura_197792-1883.jpg" alt="Instagram" width="80px" height="80px" style="margin-left: 10px;"> @VeterinariaVeteLove</p3>
+        <p4><img src="https://static.vecteezy.com/system/resources/previews/018/930/748/original/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.png" alt="Teléfonos adicionales" width="100px" height="100px" style="margin-left: 10px;"> 8844-2187 / 8799-5432</p4>
+    </div>
+    <div class="container text-center" style="margin-top: 20px;">
+        <h3>MÁS INFORMACIÓN</h3>
+        <h3>Sobre nosotros</h3>
+        <h3>Términos & Condiciones</h3>
+    </div>
+    <footer th:replace="layout/plantilla :: footer"></footer>
+</body>
 </html>
+
