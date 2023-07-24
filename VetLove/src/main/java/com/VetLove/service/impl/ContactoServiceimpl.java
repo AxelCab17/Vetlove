@@ -25,9 +25,8 @@ public class ContactoServiceimpl implements ContactoService {
     }
 
     @Override
-    @Transactional(readOnly = true)
-    public Contacto getContacto(Long email) {
-        return contactoDao.findById(email).orElse(null);
+    public Contacto getContacto(Contacto contacto) {
+        return contactoDao.findById(contacto.getIdContactanos()).orElse(null);
     }
 
     @Override

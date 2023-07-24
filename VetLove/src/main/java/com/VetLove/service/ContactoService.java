@@ -11,7 +11,7 @@ public interface ContactoService {
 
     List<Contacto> getContactos();
 
-    Contacto getContacto(Long email);
+    Contacto getContacto(Contacto contacto);
 
     public void save(Contacto contacto);
 }

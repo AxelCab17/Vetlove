@@ -35,7 +35,7 @@ public class ContactoController {
     }
 
     @PostMapping("/guardarContacto")
-    public String registroGuardar(@ModelAttribute("contacto") Contacto contacto) {
+    public String contactoGuardar(@ModelAttribute("contacto") Contacto contacto) {
         contactoService.save(contacto);
         return "redirect:/contacto"; // Redirecciona a la página de contacto después de guardar
     }
