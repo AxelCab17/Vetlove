@@ -39,8 +39,16 @@
 
                                     </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="/registro">[[#{cita.registro}]]</a>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        [[#{menu.registros}]]
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="/registro">[[#{cita.registro}]]</a></li>
+                                        <li><a class="dropdown-item " href="/mascota">[[#{registro.mascota}]]</a></li>
+
+                                    </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-light" href="/medicamento">[[#{menu.medicamentos}]]</a>
@@ -70,12 +78,12 @@
                         &COPY; [[#{plantilla.derechos}]]
                     </p>
                 </div>
-                       <i class="fab fa-facebook-f" style="width: 40px"></i>
-                       <i class="fab fa-google"style="width: 40px"></i>
-                       <i class="fab fa-instagram"style="width: 40px"></i>
+                <i class="fab fa-facebook-f" style="width: 40px"></i>
+                <i class="fab fa-google"style="width: 40px"></i>
+                <i class="fab fa-instagram"style="width: 40px"></i>
             </div>
-          
-          
+
+
         </footer>
 
     </body>
