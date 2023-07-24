@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layout/plantilla::head">
+    </head>
+
+    <body style=" margin-top: 0">
+
+        <header th:replace="layout/plantilla :: header"></header>
+        <div>
+            <img th:src="@{/images/recomen.jpg}" class="d-block w-100" alt="..." height="500px" width="400px">
+        </div>
+        <h2 style="text-align: center; margin: 50px; font-family: var">¡ Recomendaciones generales para tus mascotas dadas por nuestros mejores veterinarios!</h2>
+        <div class="card mb-3" style="max-width: 1500px; margin: 50px">
+            <div class="row g-0">
+                <div class="col-md-3">
+                    <img th:src="@{/images/recom.jpg}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <p class="card-text"><strong>Protección contra parásitos:</strong> Utiliza productos antipulgas y garrapatas, asi como antiparasitarios internos, segun las recomendaciones de tu veterinario.
+                            Esto ayudará a prevenir infestaciones y enfermedades transmitidas por parásitos.<br>
+                                <strong>Indentificación adecuada:</strong> Asegúrate de que tu mascota lleve un collar cn una placa de identificacion actualizada que incluya su nombre y tu informacion de contacto. Tambien considera la opcion de un 
+                                microchip para identificación permamente.<br>
+                                    <strong>Entrenamiento y socialización:</strong> Dedica tiempo a entrenar a tu mascota y proporcionarle una socialización adeacuada desde una edad temprana. Esto ayudará a fomentar su 
+                                    comportamiento adecuado y su interacción positiva con otros animales y personas.<br>
+                                        <strong>Ambiente seguro:</strong> Mantén el entorno de tu mascota seguro y libre de peligros. Asegúrate de que no tenga acceso a sustancias tóxicas, productos químicos, plantas venenosas
+                                        o áreas peligrosas en tu hogar o jardín.<br>
+                                            <strong> Amor y atención: </strong>Brinda a tu mascota amor, afecto y atención diariamente. Pasar tiempo de calidad juntos fortalecerá el vínculo ente ustedes y promoverá el bienestar
+                                            general de tu mascota.</p>
+
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
+
+                                            <footer th:replace="layout/plantilla :: footer"></footer>
+                                            </body>
+                                            </html>
