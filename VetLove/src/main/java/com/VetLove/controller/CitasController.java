@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/springframework/Controller.java to edit this template
- */
+
 package com.VetLove.controller;
 
 import com.VetLove.domain.Citas;
@@ -22,10 +19,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @Slf4j
-
 public class CitasController {
 
-    
     @RequestMapping("/citas")
     public String citas() {
         return "citas";
@@ -34,14 +29,13 @@ public class CitasController {
     @Autowired
     CitasService citasService;
 
-    @GetMapping("/listadoCitas")
+    @GetMapping("/ListadoCitas")
     public String inicio(Model model) {
-        log.info("Consumiendo el recurso categoria/listado");
+        log.info("Consumiendo el recurso /citas/ListadoCitas");
         List<Citas> citas = citasService.getCitas(false);
         model.addAttribute("citas", citas);
         model.addAttribute("totalCitas", citas.size());
-        return "/citas/listadoCitas";
-
+        return "citas/ListadoCitas"; // Eliminamos la barra diagonal inicial ("/")
     }
 
     @GetMapping("/nuevaCita")
@@ -50,21 +44,23 @@ public class CitasController {
     }
 
     @PostMapping("/guardarCita")
-public String citaGuardar(Citas citas) {
-    citasService.save(citas);
-    return "/citas";
-}
-
-    @GetMapping("/eliminar/{Cedula}")
-    public String citasEliminar(Citas citas) {
-        citasService.delete(citas);
-        return "redirect:/citas/listadoCitas";
+    public String citaGuardar(Citas citas) {
+        citasService.save(citas);
+        return "citas"; // También aquí podrías modificar la ruta si es necesario
     }
 
-    @GetMapping("/modificar/{Cedula}")
+    @GetMapping("/eliminar/{idCitas}")
+    public String citasEliminar(Citas citas) {
+        citasService.delete(citas);
+        return "redirect:/citas/ListadoCitas";
+    }
+
+    @GetMapping("/modificar/{idCitas}")
     public String citasModificar(Citas citas, Model model) {
         citas = citasService.getCita(citas);
         model.addAttribute("citas", citas);
         return "/citas/modifica";
     }
 }
+
+
