@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/plantilla::head">
+</head>
+<body>
+    <header th:replace="layout/plantilla :: header"></header>
+    <section th:fragment="modificarCita">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>[[#{accion.actualizar}]]</h4>
+                        </div>
+                        <div class="card-body">
+                            <form method="POST"
+                                  th:action="@{/guardarCita}"
+                                  th:object="${citas}"
+                                  class="was-validated"
+                                  enctype="multipart/form-data">
+                                <input type="hidden" name="idCitas" th:field="*{idCitas}"/>
+
+                                <div class="form-group">
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre del dueño" th:field="*{nombre}" required="true">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="apellido">Apellido</label>
+                                    <input type="text" class="form-control" id="apellido" placeholder="Apellido del dueño" th:field="*{apellido}" required="true">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="cedula">Cedula</label>
+                                    <input type="text" class="form-control" id="cedula" placeholder="Cedula del dueño" th:field="*{cedula}" required="true">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="especialidad">Especialidad del veterinario</label>
+                                    <select class="form-control" id="especialidad" th:field="*{especialidad}" required="true">
+                                        <option value="Exámen General">Exámen General</option>
+                                        <option value="Examén Fisico">Examén Fisico</option>
+                                        <option value="Fisioterapia">Fisioterapia</option>
+                                        <option value="Dermatología">Dermatología</option>
+                                        <option value="Urianálisis">Urianálisis</option>
+                                        
+                                    </select>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="fechaDisponible">Fecha disponible</label>
+                                        <input type="date" class="form-control" id="fechaDisponible" th:field="*{fechaDisponible}" required="true">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="nombreMascota">Nombre de la mascota</label>
+                                        <input type="text" class="form-control" id="nombreMascota" placeholder="Nombre de la mascota" th:field="*{nombreMascota}" required="true">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 d-grid">
+                                        <a th:href="@{/ListadoCitas}" class="btn btn-primary">
+                                            <i class="fas fa-arrow-left"></i> Regresar
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6 d-grid">
+                                        <button type="submit" class="btn btn-success">
+                                            <i class="fas fa-check"></i> Guardar
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer th:replace="layout/plantilla :: footer"></footer>
+</body>
+</html>
+

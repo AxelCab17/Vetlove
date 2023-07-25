@@ -1,4 +1,3 @@
-
 package com.VetLove.controller;
 
 import com.VetLove.domain.Citas;
@@ -12,11 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
-/**
- *
- * @author Usuario
- */
 @Controller
 @Slf4j
 public class CitasController {
@@ -52,15 +46,16 @@ public class CitasController {
     @GetMapping("/eliminar/{idCitas}")
     public String citasEliminar(Citas citas) {
         citasService.delete(citas);
-        return "redirect:/citas/ListadoCitas";
+        return "redirect:/ListadoCitas"; // Corregimos la ruta para la redirección
     }
 
     @GetMapping("/modificar/{idCitas}")
     public String citasModificar(Citas citas, Model model) {
         citas = citasService.getCita(citas);
         model.addAttribute("citas", citas);
-        return "/citas/modifica";
+        return "/citas/modificar"; // Corregimos el nombre de la plantilla
     }
 }
+
 
 
