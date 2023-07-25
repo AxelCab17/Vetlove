@@ -8,7 +8,11 @@
 
     <body>
         <header th:replace="layout/plantilla :: header"></header>
-        <div class="card-group">
+        <div class="container-fluid text-center " style="background-color: #e9e8e9; height: 40px">
+            <h4 style="font-family:var; margin: 20px;"> ¡Nuestros Medicamentos!</h4>
+        </div>
+
+        <div class="card-group" style="margin: 20px">
             <div class="card">
                 <img th:src="@{/images/agrogenta.png}"  class="card-img-top" alt="...">
                     <div class="card-body">
@@ -46,7 +50,7 @@
             </div>
 
         </div>
-        <div class="card-group">
+        <div class="card-group" style="margin: 20px">
             <div class="card">
                 <img th:src="@{/images/neo.png}"  class="card-img-top" alt="...">
                     <div class="card-body">
@@ -85,6 +89,8 @@
                                             </div>
                                             </div>
 
+                                            </div>
+                                            <div th:replace="layout/plantilla :: info">
                                             </div>
                                             <footer th:replace="layout/plantilla :: footer"></footer> 
                                             </body>

@@ -5,36 +5,41 @@
 
     <body>
         <header th:replace="layout/plantilla :: header"></header>
-        <div class="container-fluid text-center" style="height: 60px">
+        <div>
+            <img th:src="@{/images/vet_1.jpg}" class="d-block w-100" alt="..." height="300px" width="200px">
+        </div>
+        <div class="container-fluid text-center " style="height: 60px">
             <br>
-                <h2 style="font-family: serif">
+                <h2 style="font-family: serif; background-color: #e9e8e9; height: 40px">
                     <legend class="text-center header">Gracias por usar la página web de Vetelove. Nos alegra que podamos cumplir con las necesidades de tus mascotas.</legend>
                 </h2>
-                <br>
+        
                     </div>
 
                     </div>
                     <div style="margin-top: 20px; font-family: sans-serif">
-                        <div class="container">
+
+                        <div class="container-fluid col-md-6 "> <img th:src="@{/images/registro.jpg}" alt=".." align="right" height="200px" weidth="200px"/>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="well well-sm">
                                         <form action="/guardarMascota" method="POST" style="margin: 10px">
-                                            <div class="container">
+                                            <div class="container-fluid">
                                                 <div class="form-row">
-                                                    <div class="form-group">
+                                                    <div class="form-group">      
                                                         <label for="nombre">Nombre</label>
                                                         <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" name="nombre">
                                                     </div>
+
                                                     <div class="form-group">
                                                         <label for="raza">Raza</label>
                                                         <input type="text" class="form-control" id="raza" placeholder="Ingresa la raza de tu mascota" name="raza">
                                                     </div>
-
                                                 </div>
-                                                <img th:src="@{/images/registro.jpg}" alt=".." align="right" height="200px" width="200px" />
-                                                <div class="form-group">
-                                                    <button type="submit" class="btn btn-primary">Enviar!</button>
+                                            </div>
+                                            <br>
+                                                <div class="form-group " >
+                                                    <button type="submit" class="btn btn-primary ">Enviar!</button>
                                                 </div>
 
                                         </form>
@@ -43,16 +48,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container text-left" style="margin-top: 20px;">
-                        <p1><img src="https://static.vecteezy.com/system/resources/previews/017/177/709/non_2x/phone-icon-symbol-on-transparent-background-free-png.png" alt="Teléfono" width="60px" height="60px" style="margin-right: 10px;"> 2234-3211 / 2244-2654</p1>
-                        <p2><img src="https://img.freepik.com/premium-vector/vinnitsyaukrainejanuary-24-2021facebook-vector-image-flat-icon-with-letter-f-blue-color-button-with-letter-isolated-white-background_736051-65.jpg" alt="Facebook" width="80px" height="80px" style="margin-right: 10px;"> Veterinaria VeteLove</p2>
-                        <p3><img src="https://img.freepik.com/vector-premium/logotipo-redes-sociales-degradado-purpura_197792-1883.jpg" alt="Instagram" width="80px" height="80px" style="margin-left: 10px;"> @VeterinariaVeteLove</p3>
-                        <p4><img src="https://static.vecteezy.com/system/resources/previews/018/930/748/original/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.png" alt="Teléfonos adicionales" width="100px" height="100px" style="margin-left: 10px;"> 8844-2187 / 8799-5432</p4>
-                    </div>
-                    <div class="container text-center" style="margin-top: 20px;">
-                        <h3>MÁS INFORMACIÓN</h3>
-                        <h3>Sobre nosotros</h3>
-                        <h3>Términos & Condiciones</h3>
+                    <div th:replace="layout/plantilla :: info">
                     </div>
                     <footer th:replace="layout/plantilla :: footer"></footer>
                     </body>

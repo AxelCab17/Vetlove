@@ -11,7 +11,7 @@
         <div>
             <img th:src="@{/images/recomen.jpg}" class="d-block w-100" alt="..." height="500px" width="400px">
         </div>
-        <h2 style="text-align: center; margin: 50px; font-family: var">¡ Recomendaciones generales para tus mascotas dadas por nuestros mejores veterinarios!</h2>
+        <h2 style="text-align: center; font-family: var; background-color: #e9e8e9; height: 50px">¡ Recomendaciones generales para tus mascotas dadas por nuestros mejores veterinarios!</h2>
         <div class="card mb-3" style="max-width: 1500px; margin: 50px">
             <div class="row g-0">
                 <div class="col-md-3">
@@ -34,7 +34,8 @@
                                             </div>
                                             </div>
                                             </div>
-
+ <div th:replace="layout/plantilla :: info">
+                         </div>
                                             <footer th:replace="layout/plantilla :: footer"></footer>
                                             </body>
                                             </html>
