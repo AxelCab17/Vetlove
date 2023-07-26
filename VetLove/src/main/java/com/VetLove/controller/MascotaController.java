@@ -16,21 +16,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 public class MascotaController {
 
+ 
+
     @RequestMapping("/mascota")
     public String mascota() {
         return "mascota";
     }
 
+ 
+
     @Autowired
     MascotaService mascotaService;
 
-    @GetMapping("mascota/registros")
+ 
+
+    @GetMapping("/ListadoMascota")
     public String inicio(Model model) {
         log.info("Consumiendo el recurso contacto/listado");
         List<Mascota> mascotas = mascotaService.getMascotas();
         model.addAttribute("mascotas", mascotas);
-        return "mascota/registros";
+        return "mascota/ListadoMascota";
     }
+
+ 
 
     @PostMapping("/guardarMascota")
     public String mascotaGuardar(@ModelAttribute("mascota") Mascota mascota) {
@@ -38,11 +46,15 @@ public class MascotaController {
         return "/mascota"; // Redirecciona a la página de contacto después de guardar
     }
 
+ 
+
     @GetMapping("/eliminar/{idMascota}")
     public String mascotaEliminar(Mascota mascota) {
         mascotaService.delete(mascota);
-        return "redirect:/ListadoCitas"; // Corregimos la ruta para la redirección
+        return "redirect:/ListadoMascota"; // Corregimos la ruta para la redirección
     }
+
+ 
 
     @GetMapping("/modificar/{idMascota}")
     public String mascotaModificar(Mascota mascota, Model model) {
@@ -51,4 +63,8 @@ public class MascotaController {
         return "/mascota/modificar"; // Corregimos el nombre de la plantilla
     }
 
+ 
+
 }
+
+
