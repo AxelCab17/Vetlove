@@ -52,7 +52,7 @@ public class RegistroMedicoController {
     public String registroMedicoModificar(RegistroMedico registroMedico, Model model) {
         registroMedico = registroMedicoService.getRegistroMedico(registroMedico);
         model.addAttribute("registroMedico", registroMedico);
-        return "/citas/modificar"; // Corregimos el nombre de la plantilla
+        return "/registroMedico/modificar"; // Corregimos el nombre de la plantilla
     }
 
 }

@@ -55,6 +55,7 @@ public class CitasController {
         model.addAttribute("citas", citas);
         return "/citas/modificar"; // Corregimos el nombre de la plantilla
     }
+    
 }
 
 
