@@ -24,12 +24,12 @@ public class MascotaController {
     @Autowired
     MascotaService mascotaService;
 
-    @GetMapping("mascota/registros")
+    @GetMapping("/ListadoMascota")
     public String inicio(Model model) {
         log.info("Consumiendo el recurso contacto/listado");
         List<Mascota> mascotas = mascotaService.getMascotas();
         model.addAttribute("mascotas", mascotas);
-        return "mascota/registros";
+        return "mascota/ListadoMascota";
     }
 
     @PostMapping("/guardarMascota")
@@ -41,7 +41,7 @@ public class MascotaController {
     @GetMapping("/eliminar/{idMascota}")
     public String mascotaEliminar(Mascota mascota) {
         mascotaService.delete(mascota);
-        return "redirect:/ListadoCitas"; // Corregimos la ruta para la redirección
+        return "redirect:/ListadoMascota"; // Corregimos la ruta para la redirección
     }
 
     @GetMapping("/modificar/{idMascota}")

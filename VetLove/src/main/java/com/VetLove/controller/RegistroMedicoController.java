@@ -28,12 +28,12 @@ public class RegistroMedicoController {
     @Autowired
     RegistroMedicoService registroMedicoService;
 
-    @GetMapping("registroMedico/registroMedicoMascotas")
+    @GetMapping("/ListadoRegistroMedico")
     public String inicio(Model model) {
         log.info("Consumiendo el recurso contacto/listado");
         List<RegistroMedico> registrosMedicos = registroMedicoService.getRegistrosMedicos();
         model.addAttribute("registrosMedicos", registrosMedicos);
-        return "registroMedico/registroMedico";
+        return "registroMedico/ListadoRegistroMedico";
     }
 
     @PostMapping("/guardarRegistroMedicoMascota")
@@ -45,14 +45,14 @@ public class RegistroMedicoController {
     @GetMapping("/eliminar/{IdRegistroMedico}")
     public String registroMedicoEliminar(RegistroMedico registroMedico) {
         registroMedicoService.delete(registroMedico);
-        return "redirect:/ListadoCitas"; // Corregimos la ruta para la redirección
+        return "redirect:/ListadoRegistroMedico"; // Corregimos la ruta para la redirección
     }
 
     @GetMapping("/modificar/{IdRegistroMedico}")
     public String registroMedicoModificar(RegistroMedico registroMedico, Model model) {
         registroMedico = registroMedicoService.getRegistroMedico(registroMedico);
         model.addAttribute("registroMedico", registroMedico);
-        return "/citas/modificar"; // Corregimos el nombre de la plantilla
+        return "/registromedico/modificar"; // Corregimos el nombre de la plantilla
     }
 
 }

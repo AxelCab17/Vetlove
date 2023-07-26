@@ -1,54 +1,51 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="layout/plantilla::head">
-</head>
-<body>
-    <header th:replace="layout/plantilla :: header"></header>
-    <section th:fragment="listadoRegistroMedico" id="registroMedico">
-        <div class="container col-md-8">
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="fechaUltimaVisita">Fecha de la última visita</label>
-                    <input type="date" class="form-control" id="fechaUltimaVisita" name="fechaUltimaVisita">
+    <head th:replace="layout/plantilla::head">
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"></header>
+        <section th:fragment="listadoRegistroMedico" id="registrosMedicos">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Listado de Registros Médicos de Mascotas</h4>
+                            </div>
+                            <div th:if="${registrosMedicos != null and not #lists.isEmpty(registrosMedicos)}">
+                                <table class="table table-striped table-hover">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Fecha de última visita</th>
+                                            <th>Razón de la última visita</th>
+                                            <th>Examen Físico</th>
+                                            <th>Peso de la mascota</th>
+                                            <th>Temperatura de la mascota</th>
+                                            <th>Evaluación del veterinario</th>
+                                            <th>Recomendaciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="registroMedico : ${registrosMedicos}">
+                                            <td th:text="${registroMedico.fechaUltimaVisita}"></td>
+                                            <td th:text="${registroMedico.razonUltimaVisita}"></td>
+                                            <td th:text="${registroMedico.examenFisico}"></td>
+                                            <td th:text="${registroMedico.peso}"></td>
+                                            <td th:text="${registroMedico.temperatura}"></td>
+                                            <td th:text="${registroMedico.evaluacionVeterinario}"></td>
+                                            <td th:text="${registroMedico.recomendaciones}"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-center p-2" th:if="${registrosMedicos == null or #lists.isEmpty(registrosMedicos)}">
+                                <span>No hay registros médicos de mascotas.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="form-row"> 
-                <div class="form-group">
-                    <label for="razonUltimaVisita">Razón de la última visita</label>
-                    <input type="text" class="form-control" id="razonUltimaVisita" placeholder="Razón de la última visita" name="razonUltimaVisita">
-                </div>
-                <div class="form-group">
-                    <label for="examenFisico">Examen Físico</label>
-                    <input type="text" class="form-control" id="examenFisico" placeholder="Examen Físico" name="examenFisico">
-                </div>
-                <div class="form-group">
-                    <label for="peso">Peso de la mascota</label>
-                    <input type="text" class="form-control" id="peso" placeholder="Peso de la mascota" name="peso">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="temperatura">Temperatura de la mascota</label>
-                    <input type="text" class="form-control" id="temperatura" placeholder="Temperatura de la mascota" name="temperatura">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="evaluacionVeterinario">Evaluación del veterinario</label>
-                    <input type="text" class="form-control" id="evaluacionVeterinario" placeholder="Evaluación del veterinario" name="evaluacionVeterinario">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="recomendaciones">Recomendaciones a tomar en cuenta de la mascota</label>
-                    <input type="text" class="form-control" id="recomendaciones" placeholder="Recomendaciones a tomar en cuenta de la mascota" name="recomendaciones">
-                </div>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </div>
-        </div>
-    </section>
-    <footer th:replace="layout/plantilla :: footer"></footer>
-</body>
+        </section>
+        <footer th:replace="layout/plantilla :: footer"></footer>
+    </body>
 </html>
