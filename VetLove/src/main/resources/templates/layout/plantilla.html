@@ -12,8 +12,6 @@
         <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>    
     </head>
     <body>
-
-
         <header th:fragment="header" class="header">
 
             <nav class="navbar navbar-expand-lg  g-body-tertiary bg-dark  ">
@@ -39,20 +37,11 @@
 
                                     </ul>
                                 </li>
-
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         [[#{menu.registros}]]
                                     </a>
                                     <ul class="dropdown-menu">
-<<<<<<< Updated upstream
-                                        <li><a class="dropdown-item" href="/registro">[[#{cita.registro}]]</a></li>
-                                        <li><a class="nav-link dropdown-toggle text-left" href="/mascota">[[#{registro.mascota}]]</a>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item " href="/mascota">[[#{registro.mascota}]]</a></li>
-                                            </ul> 
-                                        </li>
-=======
                                         <li><a class="dropdown-item" href="/registro">[[#{registro.registro}]]</a></li>
                                         <li><a class="dropdown-item " href="/ListadoRegistros">[[#{listado.registros}]]</a></li>
 
@@ -65,7 +54,6 @@
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="/mascota">[[#{registro.mascota}]]</a></li>
                                         <li><a class="dropdown-item " href="/ListadoMascota">[[#{listado.mascota}]]</a></li>
->>>>>>> Stashed changes
 
                                     </ul>
                                 </li>
@@ -86,7 +74,6 @@
                 </div>
             </nav>
         </header>
-
         <body> 
             <div th:fragment="info" class="container text-left" style="margin-top: 20px;">
                 <p1><img src="https://static.vecteezy.com/system/resources/previews/017/177/709/non_2x/phone-icon-symbol-on-transparent-background-free-png.png" alt="Teléfono" width="60px" height="60px" style="margin-right: 10px;"> 2234-3211 / 2244-2654</p1>
@@ -111,9 +98,6 @@
                 <i class="fab fa-google"style="width: 40px"></i>
                 <i class="fab fa-instagram"style="width: 40px"></i>
             </div>
-
-
         </footer>
-
     </body>
 </html>
