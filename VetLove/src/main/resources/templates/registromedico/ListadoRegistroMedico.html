@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/plantilla::head">
+</head>
+<body>
+    <header th:replace="layout/plantilla :: header"></header>
+    <section th:fragment="listadoRegistroMedico" id="registroMedico">
+        <div class="container col-md-8">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="fechaUltimaVisita">Fecha de la última visita</label>
+                    <input type="date" class="form-control" id="fechaUltimaVisita" name="fechaUltimaVisita">
+                </div>
+            </div>
+            <div class="form-row"> 
+                <div class="form-group">
+                    <label for="razonUltimaVisita">Razón de la última visita</label>
+                    <input type="text" class="form-control" id="razonUltimaVisita" placeholder="Razón de la última visita" name="razonUltimaVisita">
+                </div>
+                <div class="form-group">
+                    <label for="examenFisico">Examen Físico</label>
+                    <input type="text" class="form-control" id="examenFisico" placeholder="Examen Físico" name="examenFisico">
+                </div>
+                <div class="form-group">
+                    <label for="peso">Peso de la mascota</label>
+                    <input type="text" class="form-control" id="peso" placeholder="Peso de la mascota" name="peso">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="temperatura">Temperatura de la mascota</label>
+                    <input type="text" class="form-control" id="temperatura" placeholder="Temperatura de la mascota" name="temperatura">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="evaluacionVeterinario">Evaluación del veterinario</label>
+                    <input type="text" class="form-control" id="evaluacionVeterinario" placeholder="Evaluación del veterinario" name="evaluacionVeterinario">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="recomendaciones">Recomendaciones a tomar en cuenta de la mascota</label>
+                    <input type="text" class="form-control" id="recomendaciones" placeholder="Recomendaciones a tomar en cuenta de la mascota" name="recomendaciones">
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </div>
+    </section>
+    <footer th:replace="layout/plantilla :: footer"></footer>
+</body>
+</html>
