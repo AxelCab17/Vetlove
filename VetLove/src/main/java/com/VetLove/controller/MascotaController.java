@@ -1,8 +1,6 @@
 package com.VetLove.controller;
 
-import com.VetLove.domain.Contacto;
 import com.VetLove.domain.Mascota;
-import com.VetLove.service.ContactoService;
 import com.VetLove.service.MascotaService;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
@@ -38,6 +36,19 @@ public class MascotaController {
     public String mascotaGuardar(@ModelAttribute("mascota") Mascota mascota) {
         mascotaService.save(mascota);
         return "/mascota"; // Redirecciona a la página de contacto después de guardar
+    }
+
+    @GetMapping("/eliminar/{idMascota}")
+    public String mascotaEliminar(Mascota mascota) {
+        mascotaService.delete(mascota);
+        return "redirect:/ListadoCitas"; // Corregimos la ruta para la redirección
+    }
+
+    @GetMapping("/modificar/{idMascota}")
+    public String mascotaModificar(Mascota mascota, Model model) {
+        mascota = mascotaService.getMascota(mascota);
+        model.addAttribute("mascota", mascota);
+        return "/mascota/modificar"; // Corregimos el nombre de la plantilla
     }
 
 }

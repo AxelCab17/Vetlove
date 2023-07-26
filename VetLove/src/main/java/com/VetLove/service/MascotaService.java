@@ -13,5 +13,7 @@ public interface MascotaService {
 
     Mascota getMascota(Mascota mascota);
 
+    public void delete(Mascota mascota);
+
     public void save(Mascota mascota);
 }

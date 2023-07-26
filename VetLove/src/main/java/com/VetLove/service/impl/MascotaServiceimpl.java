@@ -14,24 +14,30 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class MascotaServiceimpl implements MascotaService {
-
+    
     @Autowired
     private MascotaDao mascotaDao;
-
+    
     @Override
     @Transactional(readOnly = true)
     public List<Mascota> getMascotas() {
         return mascotaDao.findAll();
     }
-
+    
     @Override
     public Mascota getMascota(Mascota mascota) {
         return mascotaDao.findById(mascota.getIdMascota()).orElse(null);
     }
-
+    
     @Override
     public void save(Mascota mascota) {
         mascotaDao.save(mascota);
     }
-
+    
+    @Override
+    @Transactional
+    public void delete(Mascota mascota) {
+        mascotaDao.delete(mascota);
+    }
+    
 }
