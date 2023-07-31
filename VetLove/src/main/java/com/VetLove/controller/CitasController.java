@@ -19,7 +19,7 @@ public class CitasController {
     public String citas() {
         return "citas";
     }
-    
+
     @Autowired
     CitasService citasService;
 
@@ -43,20 +43,17 @@ public class CitasController {
         return "citas"; // También aquí podrías modificar la ruta si es necesario
     }
 
-    @GetMapping("/eliminar/{idCitas}")
+    @GetMapping("/eliminarCitas/{idCitas}")
     public String citasEliminar(Citas citas) {
         citasService.delete(citas);
         return "redirect:/ListadoCitas"; // Corregimos la ruta para la redirección
     }
 
-    @GetMapping("/modificar/{idCitas}")
-    public String citasModificar(Citas citas, Model model) {
+    @GetMapping("/modificarCitas/{idCitas}")
+    public String citasModificarForm(Citas citas, Model model) {
         citas = citasService.getCita(citas);
         model.addAttribute("citas", citas);
-        return "/citas/modificar"; // Corregimos el nombre de la plantilla
+        return "/citas/modificarCitas"; // Corregimos el nombre de la plantilla
     }
-    
+
 }
-
-
-

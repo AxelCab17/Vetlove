@@ -48,7 +48,7 @@ public class MascotaController {
 
  
 
-    @GetMapping("/eliminar/{idMascota}")
+    @GetMapping("/eliminarMascota/{idMascota}")
     public String mascotaEliminar(Mascota mascota) {
         mascotaService.delete(mascota);
         return "redirect:/ListadoMascota"; // Corregimos la ruta para la redirección
@@ -56,11 +56,11 @@ public class MascotaController {
 
  
 
-    @GetMapping("/modificar/{idMascota}")
+    @GetMapping("/modificarMascota/{idMascota}")
     public String mascotaModificar(Mascota mascota, Model model) {
         mascota = mascotaService.getMascota(mascota);
         model.addAttribute("mascota", mascota);
-        return "/mascota/modificar"; // Corregimos el nombre de la plantilla
+        return "/mascota/modificarMascota"; // Corregimos el nombre de la plantilla
     }
 
  

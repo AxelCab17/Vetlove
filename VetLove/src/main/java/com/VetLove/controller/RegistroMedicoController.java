@@ -42,17 +42,17 @@ public class RegistroMedicoController {
         return "/registroMedico"; // Redirecciona a la página de contacto después de guardar
     }
 
-    @GetMapping("/eliminar/{IdRegistroMedico}")
+    @GetMapping("/eliminarRegistroMedico/{IdRegistroMedico}")
     public String registroMedicoEliminar(RegistroMedico registroMedico) {
         registroMedicoService.delete(registroMedico);
         return "redirect:/ListadoRegistroMedico"; // Corregimos la ruta para la redirección
     }
 
-    @GetMapping("/modificar/{IdRegistroMedico}")
-    public String registroMedicoModificar(RegistroMedico registroMedico, Model model) {
+    @GetMapping("/modificarRegistroMedico/{IdRegistroMedico}")
+    public String registroMedicoModificarForm(RegistroMedico registroMedico, Model model) {
         registroMedico = registroMedicoService.getRegistroMedico(registroMedico);
         model.addAttribute("registroMedico", registroMedico);
-        return "/registroMedico/modificar"; // Corregimos el nombre de la plantilla
+        return "/registromedico/modificarRegistroMedico"; // Modificar la cadena retornada a "modificar"
     }
 
 }

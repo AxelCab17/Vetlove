@@ -37,10 +37,10 @@
                                             <td th:text="${cita.fechaDisponible}"></td>
                                             <td th:text="${cita.nombreMascota}"></td>
                                             <td>
-                                                <a th:href="@{/modificar/{idCitas}(idCitas=${cita.idCitas})}" class="btn btn-success">
+                                                <a th:href="@{/modificarCitas/{idCitas}(idCitas=${cita.idCitas})}" class="btn btn-success">
                                                     <i class="fas fa-pencil"></i> Editar
                                                 </a>
-                                                <a th:href="@{/eliminar/{idCitas}(idCitas=${cita.idCitas})}" class="btn btn-danger">
+                                                <a th:href="@{/eliminarCitas/{idCitas}(idCitas=${cita.idCitas})}" class="btn btn-danger">
                                                     <i class="fas fa-trash"></i> Eliminar
                                                 </a>
                                             </td>

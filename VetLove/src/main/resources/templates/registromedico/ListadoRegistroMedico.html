@@ -5,47 +5,57 @@
 <body>
     <header th:replace="layout/plantilla :: header"></header>
     <section th:fragment="listadoRegistroMedico" id="registroMedico">
-        <div class="container col-md-8">
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="fechaUltimaVisita">Fecha de la última visita</label>
-                    <input type="date" class="form-control" id="fechaUltimaVisita" name="fechaUltimaVisita">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>[[#{listado.registrosMedicos}]]</h4>
+                        </div>
+                        <div th:if="${registrosMedicos != null and !registrosMedicos.empty}">
+                            <table class="table table-striped table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>ID Registro Médico</th>
+                                        <th>Fecha Última Visita</th>
+                                        <th>Razón Última Visita</th>
+                                        <th>Examen Físico</th>
+                                        <th>Peso</th>
+                                        <th>Temperatura</th>
+                                        <th>Evaluación Veterinario</th>
+                                        <th>Recomendaciones</th>
+                                        <th>Acciones</th> <!-- Nueva columna para los botones -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="registro : ${registrosMedicos}">
+                                        <td th:text="${registro.idRegistroMedico}"></td>
+                                        <td th:text="${registro.fechaUltimaVisita}"></td>
+                                        <td th:text="${registro.razonUltimaVisita}"></td>
+                                        <td th:text="${registro.examenFisico}"></td>
+                                        <td th:text="${registro.peso}"></td>
+                                        <td th:text="${registro.temperatura}"></td>
+                                        <td th:text="${registro.evaluacionVeterinario}"></td>
+                                        <td th:text="${registro.recomendaciones}"></td>
+                                        <td>
+                                            <!-- Botón para editar -->
+                                               <a th:href="@{/modificarRegistroMedico/{IdRegistroMedico}(IdRegistroMedico=${registro.idRegistroMedico})}" class="btn btn-success">
+                                                    <i class="fas fa-pencil"></i> Editar
+                                                </a>
+                                            <!-- Botón para eliminar -->
+                                            <a th:href="@{/eliminarRegistroMedico/{IdRegistroMedico}(IdRegistroMedico=${registro.idRegistroMedico})}" class="btn btn-danger">
+                                                <i class="fas fa-trash"></i> Eliminar</a>
+                                        </td>
+                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-center p-2" th:if="${registrosMedicos == null or registrosMedicos.empty}">
+                            <span>[[#{listado.vacio}]]</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="form-row"> 
-                <div class="form-group">
-                    <label for="razonUltimaVisita">Razón de la última visita</label>
-                    <input type="text" class="form-control" id="razonUltimaVisita" placeholder="Razón de la última visita" name="razonUltimaVisita">
-                </div>
-                <div class="form-group">
-                    <label for="examenFisico">Examen Físico</label>
-                    <input type="text" class="form-control" id="examenFisico" placeholder="Examen Físico" name="examenFisico">
-                </div>
-                <div class="form-group">
-                    <label for="peso">Peso de la mascota</label>
-                    <input type="text" class="form-control" id="peso" placeholder="Peso de la mascota" name="peso">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="temperatura">Temperatura de la mascota</label>
-                    <input type="text" class="form-control" id="temperatura" placeholder="Temperatura de la mascota" name="temperatura">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="evaluacionVeterinario">Evaluación del veterinario</label>
-                    <input type="text" class="form-control" id="evaluacionVeterinario" placeholder="Evaluación del veterinario" name="evaluacionVeterinario">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="recomendaciones">Recomendaciones a tomar en cuenta de la mascota</label>
-                    <input type="text" class="form-control" id="recomendaciones" placeholder="Recomendaciones a tomar en cuenta de la mascota" name="recomendaciones">
-                </div>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
         </div>
     </section>

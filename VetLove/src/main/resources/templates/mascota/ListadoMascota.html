@@ -1,43 +1,52 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="layout/plantilla::head">
-</head>
-<body>
-    <header th:replace="layout/plantilla :: header"></header>
-    <section th:fragment="listadoMascota" id="mascotas">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>[[#{listado.mascotas}]]</h4>
-                        </div>
-                        <div th:if="${mascotas != null and !mascotas.empty}">
-                            <table class="table table-striped table-hover">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>ID Mascota</th>
-                                        <th>Nombre</th>
-                                        <th>Raza</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr th:each="mascota : ${mascotas}">
-                                        <td th:text="${mascota.idMascota}"></td>
-                                        <td th:text="${mascota.nombre}"></td>
-                                        <td th:text="${mascota.raza}"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="text-center p-2" th:if="${mascotas == null or mascotas.empty}">
-                            <span>[[#{lista.vacia}]]</span>
+    <head th:replace="layout/plantilla::head">
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"></header>
+        <section th:fragment="listadoMascota" id="mascotas">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>[[#{listado.mascotas}]]</h4>
+                            </div>
+                            <div th:if="${mascotas != null and !mascotas.empty}">
+                                <table class="table table-striped table-hover">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>ID Mascota</th>
+                                            <th>Nombre</th>
+                                            <th>Raza</th>
+                                            <th>Acciones</th> <!-- Nueva columna para los botones -->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="mascota : ${mascotas}">
+                                            <td th:text="${mascota.idMascota}"></td>
+                                            <td th:text="${mascota.nombre}"></td>
+                                            <td th:text="${mascota.raza}"></td>
+                                            <td>
+                                                <a th:href="@{/modificarMascota/{idMascota}(idMascota=${mascota.idMascota})}" class="btn btn-success">
+                                                    <i class="fas fa-pencil"></i> Editar
+                                                </a>
+                                                <a th:href="@{/eliminarMascota/{idMascota}(idMascota=${mascota.idMascota})}" class="btn btn-danger">
+                                                    <i class="fas fa-trash"></i> Eliminar
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-center p-2" th:if="${mascotas == null or mascotas.empty}">
+                                <span>[[#{lista.vacia}]]</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <footer th:replace="layout/plantilla :: footer"></footer>
-</body>
+        </section>
+        <footer th:replace="layout/plantilla :: footer"></footer>
+    </body>
 </html>
