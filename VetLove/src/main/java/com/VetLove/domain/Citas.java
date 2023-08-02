@@ -3,7 +3,6 @@ package com.VetLove.domain;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
-import java.sql.Time;
 import lombok.Data;
 
 @Data
