@@ -25,12 +25,12 @@ public class RegistroController {
     @Autowired
     RegistroService registroService;
 
-    @GetMapping("registro/registro")
+    @GetMapping("/ListadoRegistro")
     public String inicio(Model model) {
         log.info("Consumiendo el recurso registro/listado");
         List<Registro> registros = registroService.getRegistros(false);
         model.addAttribute("registros", registros);
-        return "registro/registro";
+        return "registro/ListadoRegistro";
 
     }
 
@@ -40,5 +40,17 @@ public class RegistroController {
         System.out.println("nombre" + registro);
 
         return "registro";
+    }
+    @GetMapping("/eliminarRegistro/{idUsuario}")
+    public String registroEliminar(Registro registro) {
+        registroService.delete(registro);
+        return "redirect:/ListadoRegistro"; // Corregimos la ruta para la redirección
+    }
+
+    @GetMapping("/modificarRegistro/{idUsuario}")
+    public String registroModificarForm(Registro registro, Model model) {
+        registro = registroService.getRegistro(registro);
+        model.addAttribute("registro", registro);
+        return "/registro/modificarRegistro"; // Corregimos el nombre de la plantilla
     }
 }

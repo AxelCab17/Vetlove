@@ -42,6 +42,12 @@ public class RegistroServiceimpl implements RegistroService {
 
     @Override
     @Transactional
+    public void delete(Registro registro) {
+        registroDao.delete(registro);
+    }
+
+    @Override
+    @Transactional
     public void save(Registro registro) {
         registroDao.save(registro);
     }
