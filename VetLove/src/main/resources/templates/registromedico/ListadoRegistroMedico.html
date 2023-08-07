@@ -4,6 +4,12 @@
 </head>
 <body>
     <header th:replace="layout/plantilla :: header"></header>
+     <div>
+            <img th:src="@{/images/cat.jpg}" class="d-block w-100" alt="..." height="420px" >
+        </div>
+        <div class="container-fluid text-center " style="height: 60px">
+            <h3 style="font-family: serif;background-color: #e9e8e9; height: 40px">Historial Medico de tu Mascota</h3>
+        </div>
     <section th:fragment="listadoRegistroMedico" id="registroMedico">
         <div class="container">
             <div class="row">
@@ -59,6 +65,8 @@
             </div>
         </div>
     </section>
+     <div th:replace="layout/plantilla :: info">
+        </div>
     <footer th:replace="layout/plantilla :: footer"></footer>
 </body>
 </html>
