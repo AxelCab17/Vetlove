@@ -8,8 +8,8 @@
     <body style=" margin-top: 0">
 
         <header th:replace="layout/plantilla :: header"></header>
-      
-       
+
+
         <div id="carouselExampleIndicators" class="carousel slide">
             <div class="carousel-indicators">
                 <button type="button"  data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -39,23 +39,18 @@
             </button>
         </div>
 
-        
+
         <div class="container-fluid text-center " style="background-color: #e9e8e9; font-size: 20px; margin-top: 0">    
-            <div class="container-fluid text-center " style="height: 50px; text-align: justify-all " ><h1 style="font-family: initial; margin-top: 10px; font-style:  italic; color: black">¡Bienvenido a VetLove !</h1><br></div>
+            <div class="container-fluid text-center " style="height: 50px; text-align: justify-all " ><h1 style="font-family: initial; margin-top: 10px; font-style:  italic; color: black">[[#{bienvenida1}]]</h1><br></div>
             <p style="font-family: cursive; align-content: center">
 
-                En VetLove, nuestro objetivo es brindar el mejor cuidado y atencion a tus queriadas mascotas. Somos una clinica veterinaria comprometida con la salud y el bienestar de los animales, y nos enorgullese ser parte de su felicidad y vitalidad
-                Nuestro equipo de veterinarios altamente capacitados y amantes de los animales esta listo para ofrecer servicios de calidad que incluyen consultas medicas, vacunaciones, cirugias, analisis clinicos y mucho mas.
-                En VetLove comprendemos que tu mascota es un miembro importante en tu familia y nos comprometemos a trabajar contigo para matenerla saludable y felix en todas la etapas de su vida. Nuestro enfoque personalizado y nuestro cuidado individualizado aseguran que cada visita sea una experiencia positiva tanto para ti como para tu mascota. 
-                Explora nuestra pagina web para concoer mas sobre nuestros servicios, nuestro equipo y nuestros valores. 
-                Estamos emocionados de recibirte en VetLove y de ser parte de la vida de tus adorables mascotas. <br>¡Ven y unete a nuestra familia de amantes de los animales!
-                    <br> <br>¡Gracias por elegir VetLove!</p> <br> </div>
-            <div class="container-fluid text-center " style=" height: 60px; margin-top: 0" > <br>
-                            <h3 style="font-family: serif">Buscanos y Ponte en Contacto con nosotros </h3>
-                        </div><br>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62879.695128149215!2d-84.15454492271695!3d9.935543132515727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e342c50d15c5%3A0xe6746a6a9f11b882!2zU2FuIEpvc8Op!5e0!3m2!1ses!2scr!4v1689094956613!5m2!1ses!2scr" width="1800px" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-           <div th:replace="layout/plantilla :: info">
-                         </div>               
-          <footer th:replace="layout/plantilla :: footer"></footer>
-                        </body>
-                        </html>
+                [[#{bienvenida}]]</p> <br> </div>
+        <div class="container-fluid text-center " style=" height: 60px; margin-top: 0" > <br>
+                <h3 style="font-family: serif"> [[#{contacto}]]</h3>
+        </div><br>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62879.695128149215!2d-84.15454492271695!3d9.935543132515727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e342c50d15c5%3A0xe6746a6a9f11b882!2zU2FuIEpvc8Op!5e0!3m2!1ses!2scr!4v1689094956613!5m2!1ses!2scr" width="1800px" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div th:replace="layout/plantilla :: info">
+            </div>               
+            <footer th:replace="layout/plantilla :: footer"></footer>
+    </body>
+</html>

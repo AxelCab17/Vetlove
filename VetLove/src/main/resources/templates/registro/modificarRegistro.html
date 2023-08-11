@@ -18,7 +18,7 @@
                                   th:object="${registro}"
                                   class="was-validated"
                                   enctype="multipart/form-data">
-                                <input type="hidden" name="id_usuario" th:field="*{id_usuario}"/>
+                                <input type="hidden" name="IdUsuario" th:field="*{IdUsuario}"/>
 
                                 <div class="form-group">
                                     <label for="nombre">[[#{registro.nombre}]]</label>
@@ -39,7 +39,7 @@
 
                                 <div class="form-group col-md-6">
                                     <label for="repetir_contrasena">[[#{registro.contrasena}]]</label>
-                                    <input type="password" class="form-control" id="repetir_contrasena" placeholder="Repetir Contraseña" th:field="*{repetir_contrasena}" required="true">
+                                    <input type="password" class="form-control" id="repetirContrasena" placeholder="Repetir Contraseña" th:field="*{repetirContrasena}" required="true">
                                 </div>
 
                                 <div class="mb-3">

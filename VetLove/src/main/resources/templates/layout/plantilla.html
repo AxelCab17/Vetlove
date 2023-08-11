@@ -40,7 +40,7 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="/registro">[[#{registro.registro}]]</a></li>
-                                        <li><a class="dropdown-item " href="/ListadoRegistros">[[#{listado.registros}]]</a></li>
+                                        <li><a class="dropdown-item " href="/ListadoRegistro">[[#{listado.registros}]]</a></li>
 
                                     </ul>
                                 </li>
@@ -73,6 +73,16 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-light" href="/contacto">[[#{menu.contactanos}]]</a>
                                 </li>
+                                
+                               
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-light" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Lang</a>
+                                <ul class="dropdown-menu dropdown-menu-ligth">
+                                    <li><a class="dropdown-item"  th:href="@{/(lang=es)}">ES</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/(lang=en)}">EN</a></li>
+                                </ul>
+                            </li>
+                         
 
                             </ul>
                         </div>
